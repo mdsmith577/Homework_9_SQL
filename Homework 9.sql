@@ -129,7 +129,7 @@ WHERE actor_id IN
 
 -- 7C
 
--- USING JOINS:
+-- USING JOIN:
 SELECT customer.first_name AS "First Name", customer.last_name AS "Last Name", customer.email AS "E-mail"
 FROM customer
 INNER JOIN address ON customer.address_id = address.address_id
@@ -171,11 +171,8 @@ INNER JOIN inventory ON film.film_id = inventory.film_id
 INNER JOIN rental ON inventory.inventory_id = rental.inventory_id
 INNER JOIN payment ON rental.rental_id = payment.rental_id
 GROUP BY film.title
+ORDER BY COUNT(*) DESC
 ;
-
--- PAYMENT - RENTAL - INVENTORY - FILM
-
-
 
 -- 7F
 
